@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-:root{
+:root{ 
     --danger:#f44336;
     --warning:#ffffcc;
     --warning2:#ffeb3b;
     --success:#4CAF50;
-    --primary:#007bff;
+    --primary:#EAF4FC;
     --info:#17a2b8;
+    --accent:#2C3E50;
+    --Highlight:#2ECC71;
+    --textColor:#333333;                                                
+    --white:#ffffff;
+
 }
 *{box-sizing: border-box; font-family:"Montserrat", sans-serif; }
-body{font-family:"Montserrat", Verdana, Geneva, Tahoma, sans-serif;font-size: 16px; font-weight: normal; margin: 0; background: #f7f7f7;}
+body{font-family:"Montserrat", Verdana, Geneva, Tahoma, sans-serif;font-size: 16px; font-weight: normal; margin: 0; background: #f7f7f7; color:var(--textColor)}
 img{max-width: 100%;}
-a{display: inline-block; text-decoration: none;}
+a{display: inline-block; text-decoration: none; transition: all 0.7s;}
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -73,20 +78,21 @@ header {  padding: 10px 30px; border-bottom: 1px solid #d9d9d9;}
 .header-row ul{list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;}
 /*---*/
 .pricing-section { padding: 30px 0;}
-.pricing-section .box{box-shadow: 0px 0px 15px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff; border-bottom: 8px solid var(--danger); padding-bottom:30px ;}
+.pricing-section .box{box-shadow: 0px 0px 15px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff; border-bottom: 8px solid var(--Highlight); padding-bottom:30px ;}
 .heading-box { margin-bottom: 40px;}
 .pricing-section .box .heading-box {  overflow: hidden;  padding: 20px; position: relative;}
 .pricing-section .box .heading-box::before { content: ""; position: absolute;  width: 500px;  height: 500px;  background: #f7f7f7;
     border-radius: 100%;  left: -50%; right: -50%; margin: 0 auto; bottom: 0;}
-    .pricing-section .box.basicplane .heading-box::before{background: var(--danger);}
+    .pricing-section .box.staterplane .heading-box::before{background: var(--info);}
+    .pricing-section .box.enterpriseplane .heading-box::before{background: var(--warning2);}
+    .pricing-section .box.basicplane .heading-box::before{background: var(--Highlight);}
     .pricing-section .box .heading-box h5,
     .pricing-section .box .heading-box p,
     .pricing-section .box .heading-box .price-box{position: relative; z-index: 1;}
     .pricing-section .heading-box h1 {
         margin-bottom: 0;
     }
-    .pricing-section .heading-box h4{color: var(--danger); margin-bottom: 0px;}
-    .pricing-section .heading-box p{color: #7d7d7d;}
+    .pricing-section .heading-box h4{color: var(--Highlight); margin-bottom: 0px;}
     .box.staterplane h5.uppercase {
         margin-bottom: 0;
     }
@@ -106,7 +112,7 @@ header {  padding: 10px 30px; border-bottom: 1px solid #d9d9d9;}
     .feature {
         padding: 30px;
     }
-    
+    .pricing-section .box.basicplane{background: var(--white);}
     .pricing-section .box .feature ul li {
         display: flex
     ;
@@ -121,16 +127,98 @@ header {  padding: 10px 30px; border-bottom: 1px solid #d9d9d9;}
     a.btn-main-border{padding: 11px 14px;
         min-width: 200px;
         text-align: center;
-        border-radius: 20px; border: 1px solid var(--danger); color: var(--danger);  font-weight: 700;}
+        border-radius: 20px; border: 1px solid var(--accent); color: var(--accent);  font-weight: 700;}
+        a.btn-main-border:hover{background: var(--accent); color: var(--primary);}
     a.btn-main {
-        background: var(--danger);
-        color: #fff;
+        background: var(--Highlight);
+        color: var(--primary);
         padding: 11px 14px;
         min-width: 200px;
         text-align: center;
         border-radius: 20px;
         text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.4); font-weight: 700;
     }
-
+    a.btn-main:hover{background: var(--info);}
     .box.basicplane .heading-box h5,
     .pricing-section .box.basicplane .heading-box .price-box p{color:#fff}
+
+
+
+    .form-container {
+        width: 100%;
+        max-width: 100%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+    
+  
+      .step {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #ddd;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+  
+   
+  
+  
+  
+      input[type="radio"] {
+        display: none;
+      }
+    
+  
+      .form-step:first-child {
+        display: block;
+      }
+  
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+  
+      .form-navigation label {
+        padding: 10px 20px;
+        background: var(--Highlight);
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+  
+      .form-navigation label:hover {
+        background: var(--danger);
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;}
+        
+      input#api-setting:checked ~ .api.form-container {
+        display: block;
+    }
+    .form-setting label {
+        display: inline-block;
+        padding: 10px 11px;
+        border: 1px solid #d9d9d9;
+    }
